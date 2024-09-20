@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IDEX Submission Portal</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .hidden-section { display: none; }
+        .active { display: block; }
+    </style>
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('.content-section').forEach(section => section.classList.add('hidden-section'));
+            document.getElementById(sectionId).classList.remove('hidden-section');
+        }
+
+        function toggleDropdown(id) {
+            const dropdown = document.getElementById(id);
+            dropdown.classList.toggle('hidden-section');
+        }
+
+        function openProfile(page) {
+            window.location.href = page;
+        }
+    </script>
+</head>
+<body class="bg-gray-100 flex">
+
+    <!-- Main Sidebar -->
+    <aside class="bg-blue-900 text-white w-64 min-h-screen p-6">
+        <h2 class="text-2xl font-bold mb-6">IDEX Submission</h2>
+        <nav class="space-y-4">
+            <button onclick="window.location.href='spoc.html'" class="block py-2 px-4 rounded hover:bg-blue-700 w-full text-left">
+                Single Point of Contact
+            </button>
+            <button onclick="showSection('entityDetails')" class="block py-2 px-4 rounded hover:bg-blue-700 w-full text-left">
+                Entity Details
+            </button>
+            <button onclick="toggleDropdown('founderDropdown')" class="block py-2 px-4 rounded hover:bg-blue-700 w-full text-left">
+                Founder Profile ▼
+            </button>
+            <div id="founderDropdown" class="hidden-section ml-4">
+                <button onclick="openProfile('Sudhir.html')" class="block py-2 px-4 rounded hover:bg-blue-700 w-full text-left">Sudhir Giri</button>
+                <button onclick="openProfile('sudar.html')" class="block py-2 px-4 rounded hover:bg-blue-700 w-full text-left">Sudaroli Murugan</button>
+            </div>
+            <button onclick="toggleDropdown('proposalDetailsDropdown')" class="block py-2 px-4 rounded hover:bg-blue-700 w-full text-left">
+                Proposal Details ▼
+            </button>
+            <div id="proposalDetailsDropdown" class="hidden-section ml-4">
+                <button onclick="showSection('problem1')" class="block py-2 px-4 rounded hover:bg-blue-700 w-full text-left">
+                    Problem 1: Indigenous AI Model
+                </button>
+                <button onclick="showSection('problem2')" class="block py-2 px-4 rounded hover:bg-blue-700 w-full text-left">
+                    Problem 2: Generative AI Solution for Knowledge Extraction and Language Translation
+                </button>
+                <button onclick="showSection('problem3')" class="block py-2 px-4 rounded hover:bg-blue-700 w-full text-left">
+                    Problem 3: Computer Vision Based Surveillance Application
+                </button>
+                <button onclick="showSection('problem4')" class="block py-2 px-4 rounded hover:bg-blue-700 w-full text-left">
+                    Problem 4: Machine Learning in Maintenance and Inventory Management
+                </button>
+            </div>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 p-6">
+
+        <!-- Sections for each menu item -->
+        <section id="singlePointOfContact" class="content-section hidden-section">
+            <!-- Single Point of Contact content goes here -->
+        </section>
+
+        <section id="entityDetails" class="content-section hidden-section">
+            <!-- Entity Details content goes here -->
+        </section>
+
+        <section id="founderDetails" class="content-section hidden-section">
+            <!-- Founder Details content goes here -->
+        </section>
+
+        <section id="procedure" class="content-section hidden-section">
+            <!-- PROCEDURE content goes here -->
+        </section>
+
+        <section id="whoCanApply" class="content-section hidden-section">
+            <!-- WHO CAN APPLY content goes here -->
+        </section>
+
+        <section id="evaluation" class="content-section hidden-section">
+            <!-- EVALUATION content goes here -->
+        </section>
+
+        <section id="grant" class="content-section hidden-section">
+            <!-- GRANT content goes here -->
+        </section>
+
+        <section id="theme" class="content-section hidden-section">
+            <!-- THEME content goes here -->
+        </section>
+
+        <section id="problem1" class="content-section hidden-section">
+            <!-- Problem 1: Indigenous AI Model content goes here -->
+        </section>
+
+        <section id="problem2" class="content-section hidden-section">
+            <!-- Problem 2: Generative AI Solution for Knowledge Extraction and Language Translation content goes here -->
+        </section>
+
+        <section id="problem3" class="content-section hidden-section">
+            <!-- Problem 3: Computer Vision Based Surveillance Application content goes here -->
+        </section>
+
+        <section id="problem4" class="content-section hidden-section">
+            <!-- Problem 4: Machine Learning in Maintenance and Inventory Management content goes here -->
+        </section>
+
+    </main>
+
+</body>
+</html>
